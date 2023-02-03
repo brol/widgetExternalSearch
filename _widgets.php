@@ -1,27 +1,18 @@
 <?php 
-# ***** BEGIN LICENSE BLOCK *****
-#
-# This file is part of External Search, a plugin for Dotclear 2
-# Copyright (C) 2009 Moe (http://gniark.net/)
-#
-# External Search is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License v2.0
-# as published by the Free Software Foundation.
-#
-# External Search is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software Foundation,
-# Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-#
-# ***** END LICENSE BLOCK *****
+/**
+ * @brief External Search, a plugin for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Plugins
+ *
+ * @author Moe, Pierre Van Glabeke and contributors
+ *
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if (!defined('DC_RC_PATH')) {return;}
 
-$core->addBehavior('initWidgets',array('externalSearchWidget',
+dcCore::app()->addBehavior('initWidgets',array('externalSearchWidget',
 	'initWidgets'));
 
 /**
@@ -69,26 +60,25 @@ class externalSearchWidget
 	*/
 	public static function show($w)
 	{
-		global $core;
 
 		if ($w->offline)
 			return;
 
-		if (($w->homeonly == 1 && $core->url->type != 'default') ||
-			($w->homeonly == 2 && $core->url->type == 'default')) {
+		if (($w->homeonly == 1 && dcCore::app()->url->type != 'default') ||
+			($w->homeonly == 2 && dcCore::app()->url->type == 'default')) {
 			return;
 		}
 				
 		$url = preg_replace('/^(http([s]*)\:\/\/)/i','',
-			$core->blog->url);
+			dcCore::app()->blog->url);
 		
 		switch($w->engine)
 		{
 			case 'bing' :
 				# add site:http://example.com/ to bing search
 				$form =
-					'<form method="post" action="'.$core->blog->url.
-						$core->url->getBase('externalSearch').'">'.
+					'<form method="post" action="'.dcCore::app()->blog->url.
+						dcCore::app()->url->getBase('externalSearch').'">'.
 					'<p><input type="text" size="10" maxlength="255" name="q" />'.
 					form::hidden(array('engine'),$w->engine).
 					' <input class="submit" type="submit" value="ok" /></p>'.
@@ -106,7 +96,7 @@ class externalSearchWidget
 				break;
 			case 'yahoo' :
 				$form =
-					'<form method="get" action="http://search.yahoo.com/search">'.
+					'<form method="get" action="https://search.yahoo.com/search">'.
 					'<p><input type="text" size="10" maxlength="255" '.
 					'name="p" />'.
 					form::hidden(array('vs'),$url).

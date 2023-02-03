@@ -1,37 +1,38 @@
+# Language: Français
+# Module: widgetExternalSearch - 0.3-dev
+# Date: 2023-02-03 10:06:17
+# Author: Pierre Van Glabeke
+# Translated with translater 2022.12.26
+
 msgid ""
 msgstr ""
-"Project-Id-Version: External Search\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-16 13:58+0100\n"
-"PO-Revision-Date: 2009-06-16 13:58+0100\n"
-"Last-Translator: Moe <poedit@gniark.net>\n"
-"Language-Team: Moe <poedit@gniark.net>\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: widgetExternalSearch 0.3-dev\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2023-02-03T10:06:17+00:00\n"
+"Last-Translator: Pierre Van Glabeke\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: French\n"
-"X-Poedit-Country: FRANCE\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: ../..\n"
-"X-Poedit-KeywordsList: __\n"
-"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: _public.php:53
-#: _widgets.php:115
+#: _public.php:39
+#: _widgets.php:108
 msgid "invalid search engine"
 msgstr "moteur de recherche invalide"
 
-#: _widgets.php:42
+#: _widgets.php:30
 msgid "External search engine"
 msgstr "Moteur de recherche externe"
 
+#: _widgets.php:33
 msgid "External search engine form"
 msgstr "Formulaire de recherche externe"
 
-#: _widgets.php:46
+#: _widgets.php:37
+msgid "Search engine:"
+msgstr "Moteur de recherche&nbsp;:"
+
 msgid "External search in a widget"
 msgstr "Recherche externe dans un widget"
 
-#: _widgets.php:49
-msgid "Search engine:"
-msgstr "Moteur de recherche&nbsp;:"
